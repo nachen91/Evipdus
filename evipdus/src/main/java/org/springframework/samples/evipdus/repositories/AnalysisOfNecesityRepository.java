@@ -23,7 +23,7 @@ public interface AnalysisOfNecesityRepository extends PagingAndSortingRepository
 	
 	@Query("SELECT aon FROM AnalysisOfNecesity aon WHERE aon.user.id=:id")
 	@Transactional(readOnly = true)
-	AnalysisOfNecesity findByUserId(@Param("id") Integer id);
+	AnalysisOfNecesity findAonByUserId(@Param("id") Integer id);
 	
 	//void save(AnalysisOfNecesity aon);
 }

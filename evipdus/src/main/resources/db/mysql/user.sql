@@ -1,7 +1,8 @@
-CREATE DATABASE IF NOT EXISTS petclinic;
+CREATE DATABASE IF NOT EXISTS evipdus;
 
-ALTER DATABASE petclinic
+ALTER DATABASE evipdus
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
-GRANT ALL PRIVILEGES ON petclinic.* TO 'petclinic'@'%' IDENTIFIED BY 'petclinic';
+CREATE USER 'evipdus'@'%' IDENTIFIED BY 'evipdus';
+GRANT ALL PRIVILEGES ON evipdus.* TO 'evipdus'@'%';

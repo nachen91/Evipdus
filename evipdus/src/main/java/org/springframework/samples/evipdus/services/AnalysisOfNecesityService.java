@@ -29,7 +29,7 @@ public class AnalysisOfNecesityService{
 	}
 	
 	public AnalysisOfNecesity findByUserId(final int id) throws DataAccessException{
-		return this.AoNRepository.findByUserId(id);
+		return this.AoNRepository.findAonByUserId(id);
 	}
 	
 

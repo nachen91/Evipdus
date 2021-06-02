@@ -6,8 +6,6 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.samples.evipdus.model.User;
-import org.springframework.samples.evipdus.model.UserAccount;
-import org.springframework.samples.evipdus.repositories.UserAccountRepository;
 import org.springframework.samples.evipdus.repositories.UserRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
