@@ -15,17 +15,14 @@
  */
 package org.springframework.samples.evipdus.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 
 
-/**
- * Simple JavaBean domain object representing an person.
- *
- */
 @Entity
 @Table(name= "usuarios")
 public class User extends BaseEntity {
@@ -37,40 +34,40 @@ public class User extends BaseEntity {
 
 	
 	@NotBlank(message = "No debe estar vacio")
-	private String firstName;
+	private String name;
 
 	
 	@NotBlank(message = "No debe estar vacio")
-	private String lastName;
+	private String surname;
 
 	
 	@NotBlank(message = "No debe estar vacio")
 	@javax.validation.constraints.Email
 	private String email;
 	
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userAccounts", referencedColumnName ="username")
-	@NotEmpty
 	private UserAccount userAccount;
 	
 	
 	public String getFirstName() {
-		return this.firstName;
+		return this.name;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstName(String name) {
+		this.name = name;
 	}
 
 	public String getLastName() {
-		return this.lastName;
+		return this.surname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastName(String surname) {
+		this.surname = surname;
 	}
 	
 	public String getEmail() {
-		return this.lastName;
+		return this.surname;
 	}
 
 	public void setEmail(String email) {

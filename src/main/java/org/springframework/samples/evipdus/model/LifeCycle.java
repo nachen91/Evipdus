@@ -5,8 +5,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table (name = "lifecycle")
-public class LifeCycle {
+@Table (name = "ciclodevida")
+public class LifeCycle extends BaseEntity{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@NotBlank(message = "No debe estar vacio")
 	private String dataCaptureAP;

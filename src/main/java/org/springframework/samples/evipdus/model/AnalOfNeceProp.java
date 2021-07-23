@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "analOfNeceProp")
-public class AnalOfNeceProp {
+public class AnalOfNeceProp extends BaseEntity{
 
 	
 	private String legitimation;

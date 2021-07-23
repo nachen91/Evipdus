@@ -19,7 +19,7 @@ package org.springframework.samples.evipdus;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.samples.evipdus.repositories.UserRepository;
+import org.springframework.samples.evipdus.repository.UserRepository;
 
 @SpringBootTest
 class EvipdusIntegrationTests {

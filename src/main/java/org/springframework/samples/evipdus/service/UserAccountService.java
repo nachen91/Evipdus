@@ -1,8 +1,8 @@
-package org.springframework.samples.evipdus.services;
+package org.springframework.samples.evipdus.service;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.evipdus.model.UserAccount;
-import org.springframework.samples.evipdus.repositories.UserAccountRepository;
+import org.springframework.samples.evipdus.repository.UserAccountRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

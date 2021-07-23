@@ -13,26 +13,16 @@ package org.springframework.samples.evipdus.security;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.security.core.GrantedAuthority;
 
-@Embeddable
-@Access(AccessType.PROPERTY)
-public class Authority implements GrantedAuthority {
+@Entity
+@Table(name="authority")
+public class Authority  {
 
-	// Constructors -----------------------------------------------------------
-
-	private static final long	serialVersionUID	= 1L;
-
-
-	public Authority() {
-		super();
-	}
 
 
 	// Values -----------------------------------------------------------------
@@ -42,13 +32,19 @@ public class Authority implements GrantedAuthority {
 	
 	// Attributes -------------------------------------------------------------
 
+	@Id
+	String username;
 	private String				authority;
 
 
-	@SuppressWarnings("deprecation")
-	@NotBlank
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	@Pattern(regexp = "^" + Authority.ADMINISTRATOR + "|" + Authority.USER + "$")
-	@Override
 	public String getAuthority() {
 		return this.authority;
 	}
@@ -78,23 +74,49 @@ public class Authority implements GrantedAuthority {
 
 	@Override
 	public int hashCode() {
-		return this.getAuthority().hashCode();
-	}
-
-	@Override
-	public boolean equals(final Object other) {
-		boolean result;
-
-		if (this == other)
-			result = true;
-		else if (other == null)
-			result = false;
-		else if (!this.getClass().isInstance(other))
-			result = false;
-		else
-			result = (this.getAuthority().equals(((Authority) other).getAuthority()));
-
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((authority == null) ? 0 : authority.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
-}
+	@Override
+	public boolean equals(final Object obj) {
+		boolean result = false;
+
+		if (this == obj)
+			result = true;
+		else if (obj == null)
+			result = false;
+		else if (this.getClass() != obj.getClass())
+			result = false;
+		
+		Authority other = (Authority) obj;
+		if(other.authority != null) {
+			if(other.authority != null) 
+			result =  false;
+			}
+		else if (!authority.equals(other.authority))
+				result = false;
+		if (username == null) {
+			if(other.username != null)
+				result = false;
+		}
+		else if(!username.equals(other.username))
+			result = false;
+		
+		//else
+			//result = (this.getAuthority().equals(((Authority) other).getAuthority()));
+
+		return result;
+	}
+	
+	public String toString() {
+		return "Authorities [username=" + username + ", authority =" + authority + "]";
+	}
+	
+	
+	}
+	
+

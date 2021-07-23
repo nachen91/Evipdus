@@ -1,4 +1,4 @@
-package org.springframework.samples.evipdus.repositories;
+package org.springframework.samples.evipdus.repository;
 
 import java.util.List;
 

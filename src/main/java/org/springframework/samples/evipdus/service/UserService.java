@@ -1,4 +1,4 @@
-package org.springframework.samples.evipdus.services;
+package org.springframework.samples.evipdus.service;
 
 
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.samples.evipdus.model.User;
-import org.springframework.samples.evipdus.repositories.UserRepository;
+import org.springframework.samples.evipdus.repository.UserRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

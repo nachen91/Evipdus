@@ -61,7 +61,8 @@ public class UserAccount extends BaseEntity implements UserDetails {
 
 	@Enumerated(EnumType.STRING)
     private Rol rol;
-
+	
+	private Boolean enabled;
 	
 
 	@Override
@@ -111,7 +112,10 @@ public class UserAccount extends BaseEntity implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true;
+		return enabled;
 	}
 
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
 }

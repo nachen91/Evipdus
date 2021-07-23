@@ -10,9 +10,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "actionPlan")
-public class ActionPlan {
+public class ActionPlan extends BaseEntity{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 	@NotBlank(message = "No debe estar vacio")
 	private String threat;
 	
