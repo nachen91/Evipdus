@@ -22,10 +22,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
-/**
- * Simple JavaBean domain object representing an person.
- *
- */
+
 @Entity
 @Table(name = "administrators")
 public class Administrator extends BaseEntity {

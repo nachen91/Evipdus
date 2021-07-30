@@ -23,7 +23,11 @@ public interface EipdRepository extends PagingAndSortingRepository<Eipd, Integer
 	
 	@Query("SELECT eipd FROM Eipd eipd WHERE eipd.user.id=:id")
 	@Transactional(readOnly = true)
-	Eipd findEipdByUserId(@Param("id") Integer id);
+	List<Eipd> findEipdByUserId(@Param("id") Integer id);
+	
+	@Query("SELECT eipd FROM Eipd eipd WHERE eipd.user.name LIKE :name")
+	@Transactional(readOnly = true)
+	List<Eipd> findEipdByUserName(String name, Pageable p);
 	
 	//void save(AnalysisOfNecesity aon);
 }

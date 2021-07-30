@@ -10,7 +10,7 @@ public interface UserAccountRepository extends Repository<UserAccount, Integer>{
 	
 	
 	
-	@Query("SELECT uc FROM UserAccount ua WHERE username=:username")
+	@Query("SELECT ua FROM UserAccount ua WHERE username=:username")
 	@Transactional(readOnly = true)
 	UserAccount findByUsername(String username);
 	

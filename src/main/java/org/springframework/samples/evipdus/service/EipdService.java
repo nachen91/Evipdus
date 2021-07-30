@@ -24,8 +24,12 @@ public class EipdService {
 		return this.eipdRepository.findEipdById(id);
 	}
 	
-	public Eipd findByUserId(final int id) throws DataAccessException{
+	public List<Eipd> findByUserId(final int id) throws DataAccessException{
 		return this.eipdRepository.findEipdByUserId(id);
+	}
+	
+	public List<Eipd> findByUsername(final String name, Pageable p) throws DataAccessException{
+		return this.eipdRepository.findEipdByUserName(name, p);
 	}
 	public void saveEipd(final Eipd eipd) throws DataAccessException{
 		this.eipdRepository.save(eipd);

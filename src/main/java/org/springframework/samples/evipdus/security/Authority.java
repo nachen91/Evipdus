@@ -34,7 +34,8 @@ public class Authority  {
 
 	@Id
 	String username;
-	private String				authority;
+	
+	String authority;
 
 
 	
@@ -106,14 +107,14 @@ public class Authority  {
 		else if(!username.equals(other.username))
 			result = false;
 		
-		//else
-			//result = (this.getAuthority().equals(((Authority) other).getAuthority()));
+		else
+			result = (this.getAuthority().equals(((Authority) other).getAuthority()));
 
 		return result;
 	}
 	
 	public String toString() {
-		return "Authorities [username=" + username + ", authority =" + authority + "]";
+		return "Authority [username=" + username + ", authority =" + authority + "]";
 	}
 	
 	

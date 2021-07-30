@@ -11,16 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface UserRepository extends PagingAndSortingRepository<User, Integer>{
 
-	@Query("SELECT u from User u where u.userAccount.id =:id")
-	@Transactional(readOnly = true)
-	UserAccount findByUserAccount(String username);
+
 	
 	@Query("SELECT u FROM User u WHERE username=:username")
 	@Transactional(readOnly = true)
-	User findByUsername(String usename);
+	User findByUsername(String username);
 	
 	
-	@Query("SELECT user FROM User u")
+	@Query("SELECT u FROM User u")
 	@Transactional(readOnly = true)
 	List<User> findAllUser(Pageable page);
 }

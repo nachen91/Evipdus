@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -32,30 +31,29 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-/**
- * Simple JavaBean domain object representing an person.
- *
- */
-@Entity
-@Table(name = "userAccounts", uniqueConstraints = {@UniqueConstraint(columnNames= {"username"})})
-public class UserAccount extends BaseEntity implements UserDetails {
 
+@Entity
+@Table(name = "user_accounts", uniqueConstraints = {@UniqueConstraint(columnNames= {"username"})})
+public class UserAccount implements UserDetails{
+
+	//extends BaseEntity implements UserDetails 
 	
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	//private Long id;
+	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * 
-	 */
-	
+
+
 	@Id
-	private Long id;
-	@Column(name = "username")
 	@NotBlank(message = "No debe estar vacio")
 	private String username;
 	
-	@Column(name = "password")
+	
 	@NotBlank(message = "No debe estar vacio")
 	private String password;
 
@@ -73,7 +71,6 @@ public class UserAccount extends BaseEntity implements UserDetails {
 		return roles;
 	}
 
-	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
 		return this.password;
@@ -82,7 +79,6 @@ public class UserAccount extends BaseEntity implements UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
 		return this.username;
@@ -109,7 +105,6 @@ public class UserAccount extends BaseEntity implements UserDetails {
 		return true;
 	}
 
-	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return enabled;

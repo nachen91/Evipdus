@@ -20,16 +20,14 @@ public class AnalysisOfNecesityService{
 		this.AoNRepository = AoNRepository;
 	}
 	
-	public AnalysisOfNecesity findByIdAoN(final int id) throws DataAccessException{
-		return this.AoNRepository.findByIdAoN(id);
-	}
+
 	
 	public List<AnalysisOfNecesity> findAllAoN(final Pageable page) throws DataAccessException{
 		return this.AoNRepository.findAllAoN(page);
 	}
 	
-	public AnalysisOfNecesity findByUserId(final int id) throws DataAccessException{
-		return this.AoNRepository.findAonByUserId(id);
+	public AnalysisOfNecesity findByUsername(final String username) throws DataAccessException{
+		return this.AoNRepository.findAoNByUsername(username);
 	}
 	
 
