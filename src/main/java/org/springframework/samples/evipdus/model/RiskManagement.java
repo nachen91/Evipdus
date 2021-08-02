@@ -7,10 +7,15 @@ import org.springframework.samples.evipdus.enums.Level;
 
 @Entity
 @Table (name = "riskManagement")
-public class RiskManagement {
+public class RiskManagement extends BaseEntity{
 
 	
 	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private boolean answers;
 	

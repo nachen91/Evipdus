@@ -1,4 +1,4 @@
-package org.springframework.samples.evipdus.repositories;
+package org.springframework.samples.evipdus.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
@@ -10,7 +10,7 @@ public interface UserAccountRepository extends Repository<UserAccount, Integer>{
 	
 	
 	
-	@Query("SELECT uc FROM UserAccount ua WHERE username=:username")
+	@Query("SELECT ua FROM UserAccount ua WHERE username=:username")
 	@Transactional(readOnly = true)
 	UserAccount findByUsername(String username);
 	
