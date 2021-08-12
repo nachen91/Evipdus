@@ -28,6 +28,11 @@
     <wro4j.version>1.8.0</wro4j.version>
 
     <jacoco.version>0.8.5</jacoco.version>
+    <jacoco.utreportpath>${project.build.directory}/jacoco</jacoco.utreportpath>
+	<jacoco.utreportfile>${project.build.directory}/jacoco.exec</jacoco.utreportfile>
+
+	<jacoco.itreportpath>${project.build.directory}/jacoco</jacoco.itreportpath>
+	<jacoco.itreportfile>${jacoco.itreportpath}/jacoco-it.exec</jacoco.itreportfile>
     <nohttp-checkstyle.version>0.0.4.RELEASE</nohttp-checkstyle.version>
     <spring-format.version>0.0.25</spring-format.version>
   </properties>
@@ -56,10 +61,6 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
         <exclusions>
@@ -69,9 +70,19 @@
             </exclusion>
         </exclusions>
     </dependency>
+     <dependency>  
+        <groupId>org.springframework.security</groupId>  
+    	<artifactId>spring-security-taglibs</artifactId>  
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-test</artifactId>
+        <scope>test</scope>
+    </dependency>
     <dependency>
    		<groupId>org.springframework.boot</groupId>
     	<artifactId>spring-boot-starter-security</artifactId>
+    	<version>2.4.4</version>
 	</dependency>
 	
 	<dependency>
@@ -79,6 +90,19 @@
     <artifactId>commons-lang3</artifactId>
     <version>3.5</version>
 	</dependency>
+	
+	
+	<!-- Jsp -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+    	<artifactId>jstl</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+     	<scope>provided</scope>
+     </dependency>
+	
 
     <!-- Databases - Uses H2 by default -->
      <dependency>

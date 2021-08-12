@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/security")
 public class LoginController  {
 	//extends AbstractController
 	// Supporting services ----------------------------------------------------
